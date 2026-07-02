@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ms Amy 棒棒学习网 V1</title>
+  <title>Ms Amy 棒棒学习网 V1 - Updated Questions</title>
   <style>
     :root{
       --bg:#f6f7fb;
@@ -160,7 +160,7 @@
 <body>
   <header>
     <h1>Ms Amy 棒棒学习网</h1>
-    <p>Sejarah · English · Geografi | V1 稳定练习版</p>
+    <p>Sejarah · English · Geografi | V1 已更新题库</p>
     <div class="top-actions">
       <button class="secondary" onclick="toggleDarkMode()">🌙 Dark Mode</button>
       <button class="secondary" onclick="goHome()">🏠 回首页</button>
@@ -245,83 +245,562 @@
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbziBzYZ-IcnXPnVV06LlF7a31HFiwcl_RHVoherRd7NfKZyptvhmjXERDCX6OULz5VA/exec";
 
     const COURSE_MAP = {
-      "Sejarah": ["F1", "F2", "F3", "F4", "F5"],
-      "English": ["F2", "F4", "F5"],
-      "Geografi": ["F1", "F2", "F3"]
-    };
+      "Sejarah": [
+            "F3",
+            "F4",
+            "F5"
+      ],
+      "English": [
+            "F2",
+            "F5"
+      ],
+      "Geografi": [
+            "F1",
+            "F2",
+            "F3"
+      ]
+};
 
     const QUESTION_BANK = [
       {
             "subject": "Sejarah",
-            "form": "F1",
-            "chapter": "Bab 1: Mengenali Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
             "type": "radio",
-            "question": "Apakah maksud sejarah?",
+            "question": "Perkembangan bandar di Sarawak tertumpu di kawasan yang mempunyai __________.",
             "image": "",
             "options": [
-                  "Peristiwa yang telah berlaku pada masa lalu",
-                  "Cerita rekaan untuk hiburan",
-                  "Ramalan masa depan",
-                  "Kajian tentang tumbuhan"
+                  "aktiviti ekonomi",
+                  "kawasan hutan",
+                  "kawasan gunung",
+                  "kawasan pertanian sahaja"
             ],
             "answer": [
-                  "Peristiwa yang telah berlaku pada masa lalu"
+                  "aktiviti ekonomi"
             ],
-            "explain": "Sejarah ialah peristiwa yang benar-benar berlaku pada masa lalu."
-      },
-      {
-            "subject": "Sejarah",
-            "form": "F1",
-            "chapter": "Bab 1: Mengenali Sejarah",
-            "type": "radio",
-            "question": "Apakah contoh sumber primer?",
-            "image": "",
-            "options": [
-                  "Buku teks",
-                  "Majalah",
-                  "Fosil",
-                  "Cerita lisan yang tidak disemak"
-            ],
-            "answer": [
-                  "Fosil"
-            ],
-            "explain": "Sumber primer ialah sumber asal seperti fosil manuskrip batu bersurat dan artifak."
-      },
-      {
-            "subject": "Sejarah",
-            "form": "F2",
-            "chapter": "Bab 1: Kerajaan Alam Melayu",
-            "type": "radio",
-            "question": "Kerajaan Alam Melayu terkenal dengan aktiviti apa?",
-            "image": "",
-            "options": [
-                  "Perdagangan",
-                  "Perlombongan moden",
-                  "Pembuatan kapal terbang",
-                  "Industri komputer"
-            ],
-            "answer": [
-                  "Perdagangan"
-            ],
-            "explain": "Kerajaan Alam Melayu berkembang melalui perdagangan dan hubungan luar."
+            "explain": "Teks menyatakan perkembangan bandar di Sarawak tertumpu di kawasan yang mempunyai aktiviti ekonomi."
       },
       {
             "subject": "Sejarah",
             "form": "F3",
-            "chapter": "Bab 1: Kedatangan Kuasa Barat",
+            "chapter": "BAB 6.4",
             "type": "radio",
-            "question": "Apakah faktor utama kedatangan kuasa Barat ke negara kita?",
+            "question": "Bandar Kuching dijadikan sebagai ibu negeri Sarawak pada tahun 1841 oleh __________.",
             "image": "",
             "options": [
-                  "Mencari bahan mentah",
-                  "Melawat tempat menarik",
-                  "Membantu rakyat tempatan",
-                  "Membina sekolah sahaja"
+                  "Charles Jessel",
+                  "James Brooke",
+                  "Stamford Raffles",
+                  "Francis Light"
             ],
             "answer": [
-                  "Mencari bahan mentah"
+                  "James Brooke"
             ],
-            "explain": "Kuasa Barat datang untuk mendapatkan bahan mentah seperti bijih timah dan rempah-ratus."
+            "explain": "Kuching dijadikan ibu negeri Sarawak pada tahun 1841 oleh James Brooke."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Penduduk awal di Bandar Kuching terdiri daripada orang __________.",
+            "image": "",
+            "options": [
+                  "Melayu dan Cina",
+                  "India dan Iban",
+                  "Kadazan dan Dusun",
+                  "Melayu dan India"
+            ],
+            "answer": [
+                  "Melayu dan Cina"
+            ],
+            "explain": "Teks menyatakan penduduk Kuching terdiri daripada orang Melayu dan Cina."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Bandar Sibu muncul pada tahun __________.",
+            "image": "",
+            "options": [
+                  "1841",
+                  "1862",
+                  "1900",
+                  "1910"
+            ],
+            "answer": [
+                  "1862"
+            ],
+            "explain": "Menurut teks, Bandar Sibu muncul pada tahun 1862."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Pada tahun 1900, ramai orang Cina berpindah ke Sibu untuk menjalankan aktiviti __________.",
+            "image": "",
+            "options": [
+                  "perlombongan emas",
+                  "pentadbiran",
+                  "perdagangan",
+                  "perikanan sahaja"
+            ],
+            "answer": [
+                  "perdagangan"
+            ],
+            "explain": "Ramai orang Cina berpindah ke Sibu untuk menjalankan aktiviti perdagangan."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Kemunculan Bandar Miri disebabkan oleh penemuan __________ pada tahun 1910.",
+            "image": "",
+            "options": [
+                  "bijih timah",
+                  "petroleum",
+                  "getah",
+                  "arang batu"
+            ],
+            "answer": [
+                  "petroleum"
+            ],
+            "explain": "Teks menyatakan kemunculan Miri disebabkan penemuan petroleum pada tahun 1910."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Di Sabah, Jesselton merupakan pusat __________ yang penting.",
+            "image": "",
+            "options": [
+                  "perdagangan dan pelabuhan",
+                  "perlombongan bijih timah",
+                  "pertanian padi",
+                  "perikanan sungai"
+            ],
+            "answer": [
+                  "perdagangan dan pelabuhan"
+            ],
+            "explain": "Jesselton disebut sebagai pusat perdagangan dan pelabuhan yang penting di Sabah."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Nama Jesselton kemudiannya ditukar kepada __________.",
+            "image": "",
+            "options": [
+                  "Kuching",
+                  "Sibu",
+                  "Kota Kinabalu",
+                  "Miri"
+            ],
+            "answer": [
+                  "Kota Kinabalu"
+            ],
+            "explain": "Teks menyatakan nama Jesselton kemudian ditukar kepada Kota Kinabalu."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Orang Cina ramai menetap di kawasan bandar dan pekan kerana kawasan tersebut mempunyai banyak __________.",
+            "image": "",
+            "options": [
+                  "peluang ekonomi",
+                  "kawasan pertanian padi",
+                  "kawasan hutan",
+                  "kawasan gunung"
+            ],
+            "answer": [
+                  "peluang ekonomi"
+            ],
+            "explain": "Dalam teks, orang Cina ramai di bandar dan pekan yang mempunyai banyak peluang ekonomi."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Berdasarkan jadual peratusan penduduk Tanah Melayu 1911-1931, peratus orang Melayu menunjukkan trend __________.",
+            "image": "",
+            "options": [
+                  "meningkat",
+                  "menurun",
+                  "tidak berubah",
+                  "tiada data"
+            ],
+            "answer": [
+                  "menurun"
+            ],
+            "explain": "Peratus orang Melayu menurun daripada 58.6% (1911) kepada 54.0% (1921) dan 49.2% (1931)."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah kesan kedatangan British terhadap sistem pendidikan di Tanah Melayu?",
+            "image": "",
+            "options": [
+                  "Membawa sistem pendidikan sekular",
+                  "Menghapuskan semua sekolah vernakular",
+                  "Mewajibkan semua kaum belajar di sekolah sama",
+                  "Menjadikan pendidikan percuma untuk semua"
+            ],
+            "answer": [
+                  "Membawa sistem pendidikan sekular"
+            ],
+            "explain": "Teks menyatakan kedatangan British membawa sistem pendidikan sekular kepada masyarakat di negara kita."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Mengapakah sekolah-sekolah vernakular berkembang mengikut kumpulan etnik masing-masing?",
+            "image": "",
+            "options": [
+                  "British mempunyai dasar pelajaran tetap",
+                  "British kurang memberikan penekanan kepada pendidikan",
+                  "Semua kaum menolak pendidikan Inggeris",
+                  "Sekolah vernakular hanya dibuka di luar bandar"
+            ],
+            "answer": [
+                  "British kurang memberikan penekanan kepada pendidikan"
+            ],
+            "explain": "Pentadbiran British tidak mempunyai dasar pelajaran yang tetap atau bermatlamat, menyebabkan sekolah vernakular berkembang mengikut etnik."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah tujuan pendidikan di sekolah vernakular Melayu menurut teks?",
+            "image": "",
+            "options": [
+                  "Melahirkan pentadbir tertinggi British",
+                  "Menjadikan orang Melayu mempunyai pengetahuan asas membaca, menulis dan mengira",
+                  "Menghantar murid Melayu belajar ke China",
+                  "Menyediakan pendidikan tinggi ke luar negeri"
+            ],
+            "answer": [
+                  "Menjadikan orang Melayu mempunyai pengetahuan asas membaca, menulis dan mengira"
+            ],
+            "explain": "Sekolah vernakular Melayu hanya bertujuan memberikan pengetahuan asas iaitu membaca, menulis dan mengira."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Sekolah Melayu Pertama, Sekolah Melayu Gelugor di Pulau Pinang dibuka pada tahun berapa?",
+            "image": "",
+            "options": [
+                  "1816",
+                  "1819",
+                  "1826",
+                  "1905"
+            ],
+            "answer": [
+                  "1819"
+            ],
+            "explain": "Gambar menyatakan Sekolah Melayu Pertama, Sekolah Melayu Gelugor, Pulau Pinang dibuka pada tahun 1819."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah ciri sekolah vernakular Cina di Negeri-negeri Melayu?",
+            "image": "",
+            "options": [
+                  "Guru dan buku teks dibawa dari India",
+                  "Kurikulum berorientasikan kurikulum sekolah dari China",
+                  "Hanya menerima murid Melayu",
+                  "Dibina khas di kawasan ladang"
+            ],
+            "answer": [
+                  "Kurikulum berorientasikan kurikulum sekolah dari China"
+            ],
+            "explain": "Teks menyatakan kurikulum sekolah Cina berorientasikan kurikulum sekolah dari China dan guru serta buku teks dibawa dari China."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah yang diwajibkan oleh Ordinan Buruh 1912 terhadap majikan ladang?",
+            "image": "",
+            "options": [
+                  "Mendirikan sekolah Tamil di ladang",
+                  "Membina sekolah Inggeris di bandar",
+                  "Menghantar pekerja ke Kolej Melayu Kuala Kangsar",
+                  "Menutup semua sekolah rendah"
+            ],
+            "answer": [
+                  "Mendirikan sekolah Tamil di ladang"
+            ],
+            "explain": "Pada tahun 1912, British memperkenalkan Ordinan Buruh yang mewajibkan majikan ladang mendirikan sekolah Tamil di ladang."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Sekolah Inggeris pertama di Tanah Melayu ialah _____.",
+            "image": "",
+            "options": [
+                  "Malacca Free School",
+                  "Penang Free School",
+                  "Kolej Melayu Kuala Kangsar",
+                  "Maktab Perguruan Sultan Idris"
+            ],
+            "answer": [
+                  "Penang Free School"
+            ],
+            "explain": "Teks menyatakan sekolah Inggeris pertama di Tanah Melayu ialah Penang Free School yang dibuka pada tahun 1816."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah kelebihan lulusan sekolah Inggeris pada zaman British?",
+            "image": "",
+            "options": [
+                  "Diberi tanah ladang secara percuma",
+                  "Berpeluang melanjutkan pelajaran dan mendapat jawatan baik dalam kerajaan",
+                  "Wajib menjadi guru sekolah Tamil",
+                  "Tidak perlu bekerja dalam pentadbiran"
+            ],
+            "answer": [
+                  "Berpeluang melanjutkan pelajaran dan mendapat jawatan baik dalam kerajaan"
+            ],
+            "explain": "Lulusan sekolah Inggeris berpeluang melanjutkan pelajaran dan diberi keutamaan menjawat jawatan baik dalam perkhidmatan kerajaan."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah matlamat penubuhan Kolej Melayu Kuala Kangsar pada tahun 1905?",
+            "image": "",
+            "options": [
+                  "Melatih buruh asing bekerja di ladang",
+                  "Menarik minat anak-anak raja dan bangsawan Melayu belajar serta melahirkan pentadbir Melayu berpendidikan Inggeris",
+                  "Membuka sekolah untuk kanak-kanak perempuan di Sarawak",
+                  "Menubuhkan sekolah Cina pertama di Bau"
+            ],
+            "answer": [
+                  "Menarik minat anak-anak raja dan bangsawan Melayu belajar serta melahirkan pentadbir Melayu berpendidikan Inggeris"
+            ],
+            "explain": "Teks menyatakan Kolej Melayu Kuala Kangsar ditubuhkan untuk anak-anak raja dan bangsawan Melayu serta melahirkan pentadbir Melayu berpendidikan Inggeris."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Antara berikut, yang manakah benar tentang perkembangan pendidikan di Sarawak?",
+            "image": "",
+            "options": [
+                  "Sekolah Cina ditubuhkan di Bau pada tahun 1870",
+                  "Penang Free School dibuka di Kuching pada tahun 1816",
+                  "SBUB membuka sekolah Melayu di Pulau Pinang",
+                  "Maktab Perguruan Sultan Idris dibuka di Sarawak"
+            ],
+            "answer": [
+                  "Sekolah Cina ditubuhkan di Bau pada tahun 1870"
+            ],
+            "explain": "Bahagian Sarawak menyatakan Sekolah Cina ditubuhkan di Bau oleh orang Cina pada tahun 1870."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah faktor yang menyebabkan merebaknya penyakit berjangkit semasa pentadbiran British?",
+            "image": "",
+            "options": [
+                  "Kekurangan sekolah dan guru",
+                  "Kedatangan buruh asing, pembukaan kawasan hutan, pembinaan petempatan baharu dan kekurangan air bersih",
+                  "Kemajuan sistem pengangkutan",
+                  "Pembinaan penjara baharu"
+            ],
+            "answer": [
+                  "Kedatangan buruh asing, pembukaan kawasan hutan, pembinaan petempatan baharu dan kekurangan air bersih"
+            ],
+            "explain": "Penyakit berjangkit merebak kerana kedatangan buruh asing, pembukaan hutan, petempatan baharu dan kekurangan air bersih."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Di manakah hospital kerajaan pertama dibina di Negeri-negeri Melayu?",
+            "image": "",
+            "options": [
+                  "Kuala Lumpur",
+                  "Taiping, Perak",
+                  "Serendah",
+                  "Sepang"
+            ],
+            "answer": [
+                  "Taiping, Perak"
+            ],
+            "explain": "Hospital kerajaan pertama dibina di Taiping, Perak pada tahun 1878."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah tujuan utama hospital didirikan di kawasan lombong dan estet?",
+            "image": "",
+            "options": [
+                  "Melatih guru tempatan",
+                  "Merawat buruh asing yang bekerja di lombong dan estet",
+                  "Menempatkan banduan dari India",
+                  "Menjadi pusat pentadbiran British"
+            ],
+            "answer": [
+                  "Merawat buruh asing yang bekerja di lombong dan estet"
+            ],
+            "explain": "Hospital didirikan untuk merawat buruh asing di lombong dan estet, selain memberi manfaat kepada penduduk tempatan."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Institut Penyelidikan Perubatan ditubuhkan di Kuala Lumpur pada tahun 1900 untuk menumpukan kajian kepada penyakit seperti",
+            "image": "",
+            "options": [
+                  "beri-beri dan malaria",
+                  "demam campak dan batuk kering",
+                  "kolera dan selesema",
+                  "cacar dan taun"
+            ],
+            "answer": [
+                  "beri-beri dan malaria"
+            ],
+            "explain": "Sebahagian besar penyelidikan saintifik tertumpu kepada penyakit tropika seperti beri-beri dan malaria."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah kesan penubuhan Institut Penyelidikan Perubatan kepada masyarakat?",
+            "image": "",
+            "options": [
+                  "Masyarakat mula menggunakan rawatan moden",
+                  "Masyarakat berhenti bekerja di lombong",
+                  "Masyarakat berpindah ke Sarawak",
+                  "Masyarakat diwajibkan menjadi doktor"
+            ],
+            "answer": [
+                  "Masyarakat mula menggunakan rawatan moden"
+            ],
+            "explain": "Kesannya, masyarakat berubah daripada rawatan tradisional berasaskan alam semula jadi kepada rawatan moden."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Siapakah yang membina Hospital Tung Shin di Jalan Sultan, Kuala Lumpur pada tahun 1881?",
+            "image": "",
+            "options": [
+                  "Francis Light",
+                  "Yap Kwan Seng",
+                  "William Hood Treacher",
+                  "F.E. Maynard"
+            ],
+            "answer": [
+                  "Yap Kwan Seng"
+            ],
+            "explain": "Yap Kwan Seng, Kapitan Cina Kuala Lumpur, membina Hospital Tung Shin pada tahun 1881."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Apakah fungsi Sanitary Board yang ditubuhkan pada tahun 1890-an?",
+            "image": "",
+            "options": [
+                  "Mengurus sekolah vernakular",
+                  "Mengawasi kebersihan dan kesihatan bandar Kuala Lumpur",
+                  "Membina landasan kereta api",
+                  "Mengutip cukai perlombongan"
+            ],
+            "answer": [
+                  "Mengawasi kebersihan dan kesihatan bandar Kuala Lumpur"
+            ],
+            "explain": "Sanitary Board ditubuhkan untuk mengawasi kebersihan dan kesihatan bandar Kuala Lumpur."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Hospital Raja Brooke Memorial yang dibina pada tahun 1925 di Sarawak merupakan",
+            "image": "",
+            "options": [
+                  "sekolah pertama di Kuching",
+                  "pusat perdagangan petroleum",
+                  "satu-satunya tapak penempatan kusta di seluruh Borneo",
+                  "pusat latihan guru Melayu"
+            ],
+            "answer": [
+                  "satu-satunya tapak penempatan kusta di seluruh Borneo"
+            ],
+            "explain": "Hospital Raja Brooke Memorial merupakan satu-satunya tapak penempatan kusta di seluruh Borneo."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Di Sabah, siapakah Gabenor pertama SBUB yang membina hospital di Kota Kinabalu, Sandakan, Beaufort, Tawau dan Kudat?",
+            "image": "",
+            "options": [
+                  "Charles Jessel",
+                  "William Hood Treacher",
+                  "James Brooke",
+                  "Loke Yew"
+            ],
+            "answer": [
+                  "William Hood Treacher"
+            ],
+            "explain": "William Hood Treacher, Gabenor pertama SBUB, membina hospital di beberapa bandar utama Sabah."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "BAB 6.4",
+            "type": "radio",
+            "question": "Mengapakah SHTI menggunakan banduan dari India di Pulau Pinang?",
+            "image": "",
+            "options": [
+                  "Sebagai guru sekolah Inggeris",
+                  "Sebagai bekalan tenaga buruh murah untuk membina pelabuhan, bangunan, jalan raya, landasan kereta api dan penjara",
+                  "Sebagai doktor di hospital kerajaan",
+                  "Sebagai peniaga di lombong bijih timah"
+            ],
+            "answer": [
+                  "Sebagai bekalan tenaga buruh murah untuk membina pelabuhan, bangunan, jalan raya, landasan kereta api dan penjara"
+            ],
+            "explain": "SHTI menggunakan banduan sebagai tenaga buruh murah untuk kerja pembinaan infrastruktur dan penjara."
       },
       {
             "subject": "Sejarah",
@@ -373,7 +852,7 @@
                   "Very small"
             ],
             "answer": [
-                  "B"
+                  "Cheap and fair"
             ],
             "explain": "___________"
       },
@@ -391,7 +870,7 @@
                   "forget"
             ],
             "answer": [
-                  "C"
+                  "value and be thankful for"
             ],
             "explain": "_____"
       },
@@ -409,7 +888,7 @@
                   "Luck"
             ],
             "answer": [
-                  "A"
+                  "Hard work"
             ],
             "explain": "____"
       },
@@ -427,7 +906,7 @@
                   "make something"
             ],
             "answer": [
-                  "B"
+                  "look at the differences between things"
             ],
             "explain": "__"
       },
@@ -445,7 +924,7 @@
                   "be"
             ],
             "answer": [
-                  "C"
+                  "is"
             ],
             "explain": "______________"
       },
@@ -463,7 +942,7 @@
                   "in"
             ],
             "answer": [
-                  "B"
+                  "at"
             ],
             "explain": "____ eg at a price/ at reasonable price"
       },
@@ -481,7 +960,7 @@
                   "because"
             ],
             "answer": [
-                  "C"
+                  "and"
             ],
             "explain": "compare prices _ read reviews __________ and"
       },
@@ -499,7 +978,7 @@
                   "appreciating"
             ],
             "answer": [
-                  "C"
+                  "will appreciate"
             ],
             "explain": "I'm sure...____________________will appreciate__\"__________\""
       },
@@ -517,7 +996,7 @@
                   "simple"
             ],
             "answer": [
-                  "B"
+                  "serious"
             ],
             "explain": ""
       },
@@ -535,7 +1014,7 @@
                   "over"
             ],
             "answer": [
-                  "B"
+                  "among"
             ],
             "explain": ""
       },
@@ -553,7 +1032,7 @@
                   "save"
             ],
             "answer": [
-                  "B"
+                  "hurt"
             ],
             "explain": ""
       },
@@ -571,7 +1050,7 @@
                   "carelessly"
             ],
             "answer": [
-                  "C"
+                  "wisely"
             ],
             "explain": ""
       },
@@ -589,7 +1068,7 @@
                   "lose"
             ],
             "answer": [
-                  "A"
+                  "create"
             ],
             "explain": ""
       },
@@ -607,7 +1086,7 @@
                   "weaker"
             ],
             "answer": [
-                  "B"
+                  "kinder"
             ],
             "explain": ""
       },
@@ -625,7 +1104,7 @@
                   "environment"
             ],
             "answer": [
-                  "D"
+                  "environment"
             ],
             "explain": ""
       },
