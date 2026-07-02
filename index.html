@@ -18,7 +18,6 @@
       --border:#e5e7eb;
       --shadow:0 12px 30px rgba(15,23,42,.08);
     }
-
     body.dark{
       --bg:#111827;
       --card:#1f2937;
@@ -32,7 +31,6 @@
       --border:#374151;
       --shadow:0 12px 30px rgba(0,0,0,.25);
     }
-
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -41,39 +39,16 @@
       color:var(--text);
       min-height:100vh;
     }
-
     header{
       padding:22px 16px;
       text-align:center;
       background:linear-gradient(135deg, var(--primary), #7c3aed);
       color:#fff;
     }
-
-    header h1{
-      margin:0;
-      font-size:28px;
-      letter-spacing:.5px;
-    }
-
-    header p{
-      margin:8px 0 0;
-      opacity:.95;
-      font-size:15px;
-    }
-
-    .top-actions{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      margin-top:14px;
-      flex-wrap:wrap;
-    }
-
-    .container{
-      width:min(980px, 94%);
-      margin:24px auto 60px;
-    }
-
+    header h1{margin:0;font-size:28px;letter-spacing:.5px}
+    header p{margin:8px 0 0;opacity:.95;font-size:15px}
+    .top-actions{display:flex;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .container{width:min(980px, 94%);margin:24px auto 60px}
     .card{
       background:var(--card);
       border:1px solid var(--border);
@@ -82,21 +57,10 @@
       padding:22px;
       margin-bottom:18px;
     }
-
     .hidden{display:none!important}
-
     h2,h3{margin-top:0}
-    label{
-      font-weight:700;
-      display:block;
-      margin:14px 0 6px;
-    }
-
-    input,select,button,textarea{
-      font-family:inherit;
-      font-size:16px;
-    }
-
+    label{font-weight:700;display:block;margin:14px 0 6px}
+    input,select,button{font-family:inherit;font-size:16px}
     input,select{
       width:100%;
       padding:12px 14px;
@@ -106,12 +70,7 @@
       color:var(--text);
       outline:none;
     }
-
-    input:focus,select:focus{
-      border-color:var(--primary);
-      box-shadow:0 0 0 3px rgba(37,99,235,.15);
-    }
-
+    input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
     button{
       border:0;
       border-radius:12px;
@@ -122,38 +81,11 @@
       color:#fff;
       transition:.15s ease;
     }
-
     button:hover{background:var(--primary-dark)}
-    button.secondary{
-      background:transparent;
-      color:var(--primary);
-      border:1px solid var(--primary);
-    }
-
-    button.secondary:hover{
-      background:rgba(37,99,235,.08);
-    }
-
-    button.danger{
-      background:var(--danger);
-    }
-
-    button:disabled{
-      opacity:.55;
-      cursor:not-allowed;
-    }
-
-    .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-
-    @media(max-width:720px){
-      .row{grid-template-columns:1fr}
-      header h1{font-size:22px}
-    }
-
+    button.secondary{background:transparent;color:var(--primary);border:1px solid var(--primary)}
+    button.secondary:hover{background:rgba(37,99,235,.08)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:720px){.row{grid-template-columns:1fr} header h1{font-size:22px}}
     .status{
       padding:12px 14px;
       border-radius:12px;
@@ -162,7 +94,6 @@
       color:var(--text);
       border:1px solid var(--border);
     }
-
     .small{font-size:14px;color:var(--muted)}
     .pill{
       display:inline-block;
@@ -174,7 +105,6 @@
       font-size:13px;
       margin:4px 4px 4px 0;
     }
-
     .question-box{
       border:1px solid var(--border);
       border-radius:16px;
@@ -182,8 +112,7 @@
       margin-top:14px;
       background:rgba(148,163,184,.08);
     }
-
-
+    .question-title{font-size:18px;font-weight:800;line-height:1.45;margin-bottom:12px;white-space:pre-wrap}
     .question-image{
       max-width:100%;
       max-height:360px;
@@ -193,26 +122,6 @@
       border:1px solid var(--border);
       background:#fff;
     }
-
-    .retry-note{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(245,158,11,.15);
-      color:var(--warning);
-      font-weight:700;
-      font-size:13px;
-      margin-bottom:10px;
-    }
-
-    .question-title{
-      font-size:18px;
-      font-weight:800;
-      line-height:1.45;
-      margin-bottom:12px;
-      white-space:pre-wrap;
-    }
-
     .option{
       display:block;
       padding:12px 14px;
@@ -224,78 +133,27 @@
       line-height:1.45;
       word-break:break-word;
     }
-
-    .option:hover{
-      border-color:var(--primary);
-    }
-
-    .option input{
-      width:auto;
-      margin-right:8px;
-    }
-
-    .feedback{
-      padding:13px 14px;
-      border-radius:12px;
-      margin-top:12px;
-      line-height:1.5;
-      border:1px solid var(--border);
-    }
-
-    .feedback.correct{
-      background:rgba(22,163,74,.12);
-      border-color:rgba(22,163,74,.3);
-    }
-
-    .feedback.wrong{
-      background:rgba(220,38,38,.12);
-      border-color:rgba(220,38,38,.3);
-    }
-
-    .progress{
-      height:12px;
-      width:100%;
-      border-radius:999px;
-      background:rgba(148,163,184,.25);
-      overflow:hidden;
-      margin:10px 0 18px;
-    }
-
-    .bar{
-      height:100%;
-      width:0%;
-      background:linear-gradient(90deg, var(--primary), #7c3aed);
-      transition:.25s;
-    }
-
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:16px;
-    }
-
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:12px;
-      overflow:hidden;
-      border-radius:12px;
-    }
-
-    th,td{
-      border-bottom:1px solid var(--border);
-      padding:10px;
-      text-align:left;
-      font-size:14px;
-    }
-
+    .option:hover{border-color:var(--primary)}
+    .option input{width:auto;margin-right:8px}
+    .feedback{padding:13px 14px;border-radius:12px;margin-top:12px;line-height:1.5;border:1px solid var(--border)}
+    .feedback.correct{background:rgba(22,163,74,.12);border-color:rgba(22,163,74,.3)}
+    .feedback.wrong{background:rgba(220,38,38,.12);border-color:rgba(220,38,38,.3)}
+    .progress{height:12px;width:100%;border-radius:999px;background:rgba(148,163,184,.25);overflow:hidden;margin:10px 0 18px}
+    .bar{height:100%;width:0%;background:linear-gradient(90deg, var(--primary), #7c3aed);transition:.25s}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    table{width:100%;border-collapse:collapse;margin-top:12px;overflow:hidden;border-radius:12px}
+    th,td{border-bottom:1px solid var(--border);padding:10px;text-align:left;font-size:14px}
     th{color:var(--muted)}
-    .footer-note{
-      text-align:center;
-      color:var(--muted);
+    .footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+    .retry-note{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(245,158,11,.15);
+      color:var(--warning);
+      font-weight:700;
       font-size:13px;
-      margin-top:20px;
+      margin-bottom:10px;
     }
   </style>
 </head>
@@ -310,25 +168,20 @@
   </header>
 
   <main class="container">
-
     <section id="loginCard" class="card">
       <h2>学生登入</h2>
       <p class="small">学生输入姓名后就可以开始练习。V1 暂时不设置密码，之后可以加每月密码。</p>
-
       <label for="studentName">学生姓名</label>
       <input id="studentName" placeholder="例如：Tan Mei Mei" />
-
       <div class="actions">
         <button onclick="login()">登入</button>
       </div>
-
       <div id="loginMsg" class="status hidden"></div>
     </section>
 
     <section id="selectCard" class="card hidden">
       <h2>选择练习</h2>
       <p>学生：<strong id="showStudentName"></strong></p>
-
       <div class="row">
         <div>
           <label for="subjectSelect">科目</label>
@@ -336,7 +189,6 @@
             <option value="">请选择科目</option>
           </select>
         </div>
-
         <div>
           <label for="formSelect">年级</label>
           <select id="formSelect" onchange="onFormChange()">
@@ -344,17 +196,14 @@
           </select>
         </div>
       </div>
-
       <label for="chapterSelect">章节 / Chapter</label>
       <select id="chapterSelect">
         <option value="">请选择章节</option>
       </select>
-
       <div class="actions">
         <button onclick="startQuiz()">开始练习</button>
         <button class="secondary" onclick="logout()">换学生</button>
       </div>
-
       <div id="selectMsg" class="status hidden"></div>
     </section>
 
@@ -363,13 +212,8 @@
         <span class="pill" id="quizInfo"></span>
         <span class="pill" id="questionCount"></span>
       </div>
-
-      <div class="progress">
-        <div class="bar" id="progressBar"></div>
-      </div>
-
+      <div class="progress"><div class="bar" id="progressBar"></div></div>
       <div id="questionArea" class="question-box"></div>
-
       <div class="actions">
         <button id="checkBtn" onclick="checkAnswer()">检查答案</button>
         <button id="nextBtn" onclick="nextQuestion()" class="hidden">下一题</button>
@@ -380,20 +224,17 @@
     <section id="resultCard" class="card hidden">
       <h2>完成练习</h2>
       <div id="resultSummary"></div>
-
       <div class="actions">
         <button onclick="submitScore()">提交成绩</button>
         <button class="secondary" onclick="backToSelect()">继续做其他练习</button>
       </div>
-
       <div id="submitMsg" class="status hidden"></div>
     </section>
 
     <section class="card">
       <h3>老师说明</h3>
       <p class="small">
-        这是 V1 稳定版。题目暂时放在网页里面，测试稳定后可以改成从 CSV 或 Google Sheet 读取。
-        成绩提交需要先把下面的 <strong>WEB_APP_URL</strong> 换成你的 Apps Script 部署网址。
+        这是 V1 稳定版。CSV 支持 image 图片栏位。学生答错的题目会自动重新答过两次。
       </p>
     </section>
 
@@ -401,24 +242,14 @@
   </main>
 
   <script>
-    /**********************
-     * 1. Apps Script URL
-     **********************/
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbziBzYZ-IcnXPnVV06LlF7a31HFiwcl_RHVoherRd7NfKZyptvhmjXERDCX6OULz5VA/exec";
 
-    /**********************
-     * 2. 课程设定
-     **********************/
     const COURSE_MAP = {
       "Sejarah": ["F1", "F2", "F3", "F4", "F5"],
       "English": ["F2", "F4", "F5"],
       "Geografi": ["F1", "F2", "F3"]
     };
 
-    /**********************
-     * 3. 示例题库
-     * 之后你可以继续加题目
-     **********************/
     const QUESTION_BANK = [
       {
         subject:"Sejarah",
@@ -507,8 +338,7 @@
         form:"F2",
         chapter:"Grammar: Tenses",
         type:"radio",
-        question:"Choose the correct answer:
-She _____ to school every day.",
+        question:"Choose the correct answer:\nShe _____ to school every day.",
         image:"",
         options:["go","goes","going","gone"],
         answer:["goes"],
@@ -519,8 +349,7 @@ She _____ to school every day.",
         form:"F2",
         chapter:"Grammar: Tenses",
         type:"radio",
-        question:"Choose the correct answer:
-They _____ football yesterday.",
+        question:"Choose the correct answer:\nThey _____ football yesterday.",
         image:"",
         options:["play","plays","played","playing"],
         answer:["played"],
@@ -531,8 +360,7 @@ They _____ football yesterday.",
         form:"F4",
         chapter:"Grammar: Passive Voice",
         type:"radio",
-        question:"Choose the correct passive sentence:
-They built the bridge in 1990.",
+        question:"Choose the correct passive sentence:\nThey built the bridge in 1990.",
         image:"",
         options:[
           "The bridge built in 1990.",
@@ -613,7 +441,7 @@ They built the bridge in 1990.",
 
     function init(){
       const subjectSelect = document.getElementById("subjectSelect");
-      Object.keys(COURSE_MAP).forEach(subject => {
+      Object.keys(COURSE_MAP).forEach(function(subject){
         const opt = document.createElement("option");
         opt.value = subject;
         opt.textContent = subject;
@@ -682,10 +510,11 @@ They built the bridge in 1990.",
       const formSelect = document.getElementById("formSelect");
       formSelect.innerHTML = '<option value="">请选择年级</option>';
       document.getElementById("chapterSelect").innerHTML = '<option value="">请选择章节</option>';
+      document.getElementById("selectMsg").classList.add("hidden");
 
       if(!selectedSubject) return;
 
-      COURSE_MAP[selectedSubject].forEach(form => {
+      COURSE_MAP[selectedSubject].forEach(function(form){
         const opt = document.createElement("option");
         opt.value = form;
         opt.textContent = form;
@@ -698,21 +527,23 @@ They built the bridge in 1990.",
       selectedForm = document.getElementById("formSelect").value;
       const chapterSelect = document.getElementById("chapterSelect");
       chapterSelect.innerHTML = '<option value="">请选择章节</option>';
+      document.getElementById("selectMsg").classList.add("hidden");
 
       if(!selectedSubject || !selectedForm) return;
 
-      const chapters = [...new Set(
-        QUESTION_BANK
-          .filter(q => q.subject === selectedSubject && q.form === selectedForm)
-          .map(q => q.chapter)
-      )];
+      const chapters = [];
+      QUESTION_BANK.forEach(function(q){
+        if(q.subject === selectedSubject && q.form === selectedForm && !chapters.includes(q.chapter)){
+          chapters.push(q.chapter);
+        }
+      });
 
       if(chapters.length === 0){
-        showMsg("selectMsg","这个科目和年级暂时还没有题目。你可以先在 QUESTION_BANK 里面加题目。");
+        showMsg("selectMsg","这个科目和年级暂时还没有题目。");
         return;
       }
 
-      chapters.forEach(ch => {
+      chapters.forEach(function(ch){
         const opt = document.createElement("option");
         opt.value = ch;
         opt.textContent = ch;
@@ -730,11 +561,13 @@ They built the bridge in 1990.",
         return;
       }
 
-      quizQuestions = QUESTION_BANK.filter(q =>
-        q.subject === selectedSubject &&
-        q.form === selectedForm &&
-        q.chapter === selectedChapter
-      );
+      quizQuestions = QUESTION_BANK
+        .filter(function(q){
+          return q.subject === selectedSubject &&
+                 q.form === selectedForm &&
+                 q.chapter === selectedChapter;
+        })
+        .map(function(q){ return Object.assign({}, q); });
 
       if(quizQuestions.length === 0){
         showMsg("selectMsg","这个章节暂时没有题目。");
@@ -756,40 +589,33 @@ They built the bridge in 1990.",
     function renderQuestion(){
       answered = false;
       const q = quizQuestions[currentIndex];
-      document.getElementById("quizInfo").textContent = `${q.subject} ${q.form} · ${q.chapter}`;
-      document.getElementById("questionCount").textContent = `第 ${currentIndex+1} / ${quizQuestions.length} 题`;
-      document.getElementById("progressBar").style.width = `${(currentIndex / quizQuestions.length) * 100}%`;
+      document.getElementById("quizInfo").textContent = q.subject + " " + q.form + " · " + q.chapter;
+      document.getElementById("questionCount").textContent = "第 " + (currentIndex + 1) + " / " + quizQuestions.length + " 题";
+      document.getElementById("progressBar").style.width = ((currentIndex / quizQuestions.length) * 100) + "%";
 
       let html = "";
       if(q.retryRound){
-        html += `<div class="retry-note">重答题目：第 ${q.retryRound} 次</div>`;
+        html += '<div class="retry-note">重答题目：第 ' + q.retryRound + ' 次</div>';
       }
-      html += `<div class="question-title">${escapeHtml(q.question)}</div>`;
+      html += '<div class="question-title">' + escapeHtml(q.question) + '</div>';
+
       if(q.image){
-        html += `<img class="question-image" src="${escapeHtml(q.image)}" alt="question image" onerror="this.style.display='none'">`;
+        html += '<img class="question-image" src="' + escapeHtml(q.image) + '" alt="question image" onerror="this.style.display=\'none\'">';
       }
 
       if(q.type === "radio"){
-        q.options.forEach((opt, i) => {
-          html += `
-            <label class="option">
-              <input type="radio" name="answer" value="${escapeHtml(opt)}">
-              ${escapeHtml(opt)}
-            </label>`;
+        q.options.forEach(function(opt){
+          html += '<label class="option"><input type="radio" name="answer" value="' + escapeHtml(opt) + '"> ' + escapeHtml(opt) + '</label>';
         });
       }else if(q.type === "checkbox"){
-        q.options.forEach((opt, i) => {
-          html += `
-            <label class="option">
-              <input type="checkbox" name="answer" value="${escapeHtml(opt)}">
-              ${escapeHtml(opt)}
-            </label>`;
+        q.options.forEach(function(opt){
+          html += '<label class="option"><input type="checkbox" name="answer" value="' + escapeHtml(opt) + '"> ' + escapeHtml(opt) + '</label>';
         });
       }else if(q.type === "text"){
-        html += `<input id="textAnswer" placeholder="请输入答案">`;
+        html += '<input id="textAnswer" placeholder="请输入答案">';
       }
 
-      html += `<div id="feedbackArea"></div>`;
+      html += '<div id="feedbackArea"></div>';
       document.getElementById("questionArea").innerHTML = html;
       document.getElementById("checkBtn").classList.remove("hidden");
       document.getElementById("nextBtn").classList.add("hidden");
@@ -802,7 +628,7 @@ They built the bridge in 1990.",
       }
 
       if(q.type === "checkbox"){
-        return [...document.querySelectorAll('input[name="answer"]:checked')].map(x => x.value);
+        return Array.prototype.slice.call(document.querySelectorAll('input[name="answer"]:checked')).map(function(x){return x.value;});
       }
 
       if(q.type === "text"){
@@ -824,32 +650,31 @@ They built the bridge in 1990.",
         return;
       }
 
-      const correctAns = q.answer.map(x => normalize(x));
-      const givenAns = studentAns.map(x => normalize(x));
+      const correctAns = q.answer.map(function(x){return normalize(x);});
+      const givenAns = studentAns.map(function(x){return normalize(x);});
 
       let isCorrect = false;
 
       if(q.type === "checkbox"){
-        isCorrect =
-          correctAns.length === givenAns.length &&
-          correctAns.every(ans => givenAns.includes(ans));
+        isCorrect = correctAns.length === givenAns.length && correctAns.every(function(ans){return givenAns.includes(ans);});
       }else{
         isCorrect = correctAns.includes(givenAns[0]);
       }
 
       answered = true;
 
-      if(isCorrect) {
+      if(isCorrect){
         correctCount++;
-      } else {
+      }else{
         wrongCount++;
 
         // 答错的题目自动加回队伍，让学生重新答过两次
-        // 如果是原题第一次答错，会加入第 1 次和第 2 次重答
-        // 如果是重答题又答错，不会无限增加，避免题目做不完
+        // 重答题再次答错不会无限增加
         if(!q.retryRound){
-          quizQuestions.push({...q, retryRound:1});
-          quizQuestions.push({...q, retryRound:2});
+          const retry1 = Object.assign({}, q, {retryRound:1});
+          const retry2 = Object.assign({}, q, {retryRound:2});
+          quizQuestions.push(retry1);
+          quizQuestions.push(retry2);
         }
       }
 
@@ -857,20 +682,20 @@ They built the bridge in 1990.",
         question:q.question,
         studentAnswer:studentAns.join(", "),
         correctAnswer:q.answer.join(", "),
-        isCorrect,
-        explain:q.explain
+        isCorrect:isCorrect,
+        explain:q.explain || ""
       });
 
       const feedback = document.getElementById("feedbackArea");
       feedback.className = "feedback " + (isCorrect ? "correct" : "wrong");
-      feedback.innerHTML = `
-        <strong>${isCorrect ? "✅ 答对了！" : "❌ 答错了"}</strong><br>
-        <strong>正确答案：</strong>${escapeHtml(q.answer.join(", "))}<br>
-        <strong>解释：</strong>${escapeHtml(q.explain || "暂无解释")}
-      `;
+      feedback.innerHTML =
+        "<strong>" + (isCorrect ? "✅ 答对了！" : "❌ 答错了") + "</strong><br>" +
+        "<strong>正确答案：</strong>" + escapeHtml(q.answer.join(", ")) + "<br>" +
+        "<strong>解释：</strong>" + escapeHtml(q.explain || "暂无解释");
 
       document.getElementById("checkBtn").classList.add("hidden");
       document.getElementById("nextBtn").classList.remove("hidden");
+      document.getElementById("questionCount").textContent = "第 " + (currentIndex + 1) + " / " + quizQuestions.length + " 题";
     }
 
     function nextQuestion(){
@@ -890,43 +715,36 @@ They built the bridge in 1990.",
       const total = correctCount + wrongCount;
       const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
 
-      document.getElementById("resultSummary").innerHTML = `
-        <p><span class="pill">${selectedSubject} ${selectedForm}</span>
-        <span class="pill">${selectedChapter}</span></p>
-
-        <table>
-          <tr><th>学生</th><td>${escapeHtml(studentName)}</td></tr>
-          <tr><th>总题数</th><td>${total}</td></tr>
-          <tr><th>答对</th><td>${correctCount}</td></tr>
-          <tr><th>答错</th><td>${wrongCount}</td></tr>
-          <tr><th>正确率</th><td>${percent}%</td></tr>
-        </table>
-      `;
+      document.getElementById("resultSummary").innerHTML =
+        '<p><span class="pill">' + escapeHtml(selectedSubject + " " + selectedForm) + '</span>' +
+        '<span class="pill">' + escapeHtml(selectedChapter) + '</span></p>' +
+        '<table>' +
+        '<tr><th>学生</th><td>' + escapeHtml(studentName) + '</td></tr>' +
+        '<tr><th>总作答次数</th><td>' + total + '</td></tr>' +
+        '<tr><th>答对</th><td>' + correctCount + '</td></tr>' +
+        '<tr><th>答错</th><td>' + wrongCount + '</td></tr>' +
+        '<tr><th>正确率</th><td>' + percent + '%</td></tr>' +
+        '</table>';
     }
 
     async function submitScore(){
       const msg = document.getElementById("submitMsg");
+      const total = correctCount + wrongCount;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
 
       const payload = {
         action:"submitScore",
-        studentName,
+        studentName:studentName,
         subject:selectedSubject,
         form:selectedForm,
         chapter:selectedChapter,
-        total:correctCount + wrongCount,
+        total:total,
         correct:correctCount,
         wrong:wrongCount,
-        percent:(correctCount + wrongCount) > 0 ? Math.round((correctCount / (correctCount + wrongCount)) * 100) : 0,
+        percent:percent,
         dateTime:new Date().toLocaleString("en-MY", { timeZone:"Asia/Kuala_Lumpur" }),
         answers:answerHistory
       };
-
-      if(WEB_APP_URL.includes("PASTE_YOUR")){
-        msg.classList.remove("hidden");
-        msg.textContent = "⚠️ 还没有设置 Apps Script URL，所以成绩暂时只显示在网页，没有提交到 Google Sheet。";
-        saveLocalScore(payload);
-        return;
-      }
 
       msg.classList.remove("hidden");
       msg.textContent = "正在提交成绩...";
@@ -938,9 +756,8 @@ They built the bridge in 1990.",
           headers:{"Content-Type":"text/plain;charset=utf-8"},
           body:JSON.stringify(payload)
         });
-
         saveLocalScore(payload);
-        msg.textContent = "✅ 成绩已提交。如果网络较慢，Google Sheet 可能需要几秒才看到。";
+        msg.textContent = "✅ 成绩已提交。如果 Google Sheet 没马上看到，请等几秒再刷新。";
       }catch(err){
         saveLocalScore(payload);
         msg.textContent = "⚠️ 网络提交失败，但成绩已暂存在这个设备。请检查 Apps Script URL。";
@@ -948,9 +765,9 @@ They built the bridge in 1990.",
     }
 
     function saveLocalScore(payload){
-      const old = JSON.parse(localStorage.getItem("amy_quiz_scores") || "[]");
-      old.push(payload);
-      localStorage.setItem("amy_quiz_scores", JSON.stringify(old));
+      const oldScores = JSON.parse(localStorage.getItem("amy_quiz_scores") || "[]");
+      oldScores.push(payload);
+      localStorage.setItem("amy_quiz_scores", JSON.stringify(oldScores));
     }
 
     function backToSelect(){
