@@ -183,6 +183,28 @@
       background:rgba(148,163,184,.08);
     }
 
+
+    .question-image{
+      max-width:100%;
+      max-height:360px;
+      display:block;
+      margin:12px auto 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+
+    .retry-note{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(245,158,11,.15);
+      color:var(--warning);
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+
     .question-title{
       font-size:18px;
       font-weight:800;
@@ -404,6 +426,7 @@
         chapter:"Bab 1: Mengenali Sejarah",
         type:"radio",
         question:"Apakah maksud sejarah?",
+        image:"",
         options:[
           "Peristiwa yang telah berlaku pada masa lalu",
           "Cerita rekaan untuk hiburan",
@@ -419,9 +442,21 @@
         chapter:"Bab 1: Mengenali Sejarah",
         type:"radio",
         question:"Siapakah yang mengkaji peristiwa masa lalu?",
+        image:"",
         options:["Doktor","Ahli sejarah","Jurutera","Peniaga"],
         answer:["Ahli sejarah"],
         explain:"Ahli sejarah mengkaji sumber dan peristiwa yang berlaku pada masa lalu."
+      },
+      {
+        subject:"Sejarah",
+        form:"F1",
+        chapter:"Bab 1: Mengenali Sejarah",
+        type:"radio",
+        question:"Apakah contoh sumber primer?",
+        image:"",
+        options:["Buku teks","Majalah","Fosil","Cerita lisan yang tidak disemak"],
+        answer:["Fosil"],
+        explain:"Sumber primer ialah sumber asal seperti fosil, manuskrip, batu bersurat dan artifak."
       },
       {
         subject:"Sejarah",
@@ -429,26 +464,76 @@
         chapter:"Bab 1: Kerajaan Alam Melayu",
         type:"radio",
         question:"Kerajaan Alam Melayu terkenal dengan aktiviti apa?",
+        image:"",
         options:["Perdagangan","Perlombongan moden","Pembuatan kapal terbang","Industri komputer"],
         answer:["Perdagangan"],
         explain:"Kerajaan Alam Melayu berkembang melalui perdagangan dan hubungan luar."
+      },
+      {
+        subject:"Sejarah",
+        form:"F3",
+        chapter:"Bab 1: Kedatangan Kuasa Barat",
+        type:"radio",
+        question:"Apakah faktor utama kedatangan kuasa Barat ke negara kita?",
+        image:"",
+        options:["Mencari bahan mentah","Melawat tempat menarik","Membantu rakyat tempatan","Membina sekolah sahaja"],
+        answer:["Mencari bahan mentah"],
+        explain:"Kuasa Barat datang untuk mendapatkan bahan mentah seperti bijih timah dan rempah-ratus."
+      },
+      {
+        subject:"Sejarah",
+        form:"F4",
+        chapter:"Bab 1: Warisan Negara Bangsa",
+        type:"radio",
+        question:"Apakah maksud kedaulatan?",
+        image:"",
+        options:["Kuasa tertinggi sesebuah negara","Sistem jual beli","Hubungan keluarga diraja","Kawasan tanaman padi"],
+        answer:["Kuasa tertinggi sesebuah negara"],
+        explain:"Kedaulatan bermaksud kuasa tertinggi yang dimiliki oleh sesebuah negara untuk memerintah."
+      },
+      {
+        subject:"Sejarah",
+        form:"F5",
+        chapter:"Bab 1: Kedaulatan Negara",
+        type:"radio",
+        question:"Mengapakah kedaulatan penting kepada sesebuah negara?",
+        image:"",
+        options:["Menjamin keamanan dan kestabilan","Menghapuskan semua undang-undang","Mengurangkan semangat patriotik","Mengelakkan pilihan raya"],
+        answer:["Menjamin keamanan dan kestabilan"],
+        explain:"Kedaulatan penting untuk mengekalkan keamanan, kestabilan politik dan maruah negara."
       },
       {
         subject:"English",
         form:"F2",
         chapter:"Grammar: Tenses",
         type:"radio",
-        question:"Choose the correct answer:\nShe _____ to school every day.",
+        question:"Choose the correct answer:
+She _____ to school every day.",
+        image:"",
         options:["go","goes","going","gone"],
         answer:["goes"],
         explain:"For he/she/it in simple present tense, we add -s or -es to the verb."
       },
       {
         subject:"English",
+        form:"F2",
+        chapter:"Grammar: Tenses",
+        type:"radio",
+        question:"Choose the correct answer:
+They _____ football yesterday.",
+        image:"",
+        options:["play","plays","played","playing"],
+        answer:["played"],
+        explain:"The word 'yesterday' shows past tense, so the answer is 'played'."
+      },
+      {
+        subject:"English",
         form:"F4",
         chapter:"Grammar: Passive Voice",
         type:"radio",
-        question:"Choose the correct passive sentence:\nThey built the bridge in 1990.",
+        question:"Choose the correct passive sentence:
+They built the bridge in 1990.",
+        image:"",
         options:[
           "The bridge built in 1990.",
           "The bridge was built in 1990.",
@@ -459,14 +544,37 @@
         explain:"Past passive voice uses: was/were + past participle."
       },
       {
+        subject:"English",
+        form:"F5",
+        chapter:"Reading: Vocabulary",
+        type:"radio",
+        question:"Choose the word with the closest meaning to 'assist'.",
+        image:"",
+        options:["help","avoid","delay","refuse"],
+        answer:["help"],
+        explain:"Assist means help."
+      },
+      {
         subject:"Geografi",
         form:"F1",
         chapter:"Bab 1: Arah",
         type:"radio",
         question:"Apakah arah yang bertentangan dengan utara?",
+        image:"",
         options:["Timur","Selatan","Barat","Timur Laut"],
         answer:["Selatan"],
         explain:"Arah yang bertentangan dengan utara ialah selatan."
+      },
+      {
+        subject:"Geografi",
+        form:"F1",
+        chapter:"Bab 1: Arah",
+        type:"radio",
+        question:"Lihat gambar kompas di bawah. Arah manakah yang biasanya berada di bahagian atas kompas?",
+        image:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Compass_Rose_English_North.svg/512px-Compass_Rose_English_North.svg.png",
+        options:["Utara","Selatan","Timur","Barat"],
+        answer:["Utara"],
+        explain:"Bahagian atas kompas biasanya menunjukkan arah utara."
       },
       {
         subject:"Geografi",
@@ -474,9 +582,21 @@
         chapter:"Bab 2: Peta Topografi",
         type:"radio",
         question:"Garisan kontur digunakan untuk menunjukkan apa?",
+        image:"",
         options:["Ketinggian sesuatu kawasan","Jumlah penduduk","Jenis tanaman","Sempadan negeri"],
         answer:["Ketinggian sesuatu kawasan"],
         explain:"Garisan kontur menunjukkan ketinggian dan bentuk muka bumi."
+      },
+      {
+        subject:"Geografi",
+        form:"F3",
+        chapter:"Bab 1: Jadual dan Graf",
+        type:"radio",
+        question:"Apakah kegunaan graf bar?",
+        image:"",
+        options:["Membandingkan data antara kategori","Menunjukkan arah mata angin","Menentukan skala peta","Mengukur kelembapan udara"],
+        answer:["Membandingkan data antara kategori"],
+        explain:"Graf bar sesuai digunakan untuk membandingkan jumlah data bagi beberapa kategori."
       }
     ];
 
@@ -640,7 +760,14 @@
       document.getElementById("questionCount").textContent = `第 ${currentIndex+1} / ${quizQuestions.length} 题`;
       document.getElementById("progressBar").style.width = `${(currentIndex / quizQuestions.length) * 100}%`;
 
-      let html = `<div class="question-title">${escapeHtml(q.question)}</div>`;
+      let html = "";
+      if(q.retryRound){
+        html += `<div class="retry-note">重答题目：第 ${q.retryRound} 次</div>`;
+      }
+      html += `<div class="question-title">${escapeHtml(q.question)}</div>`;
+      if(q.image){
+        html += `<img class="question-image" src="${escapeHtml(q.image)}" alt="question image" onerror="this.style.display='none'">`;
+      }
 
       if(q.type === "radio"){
         q.options.forEach((opt, i) => {
@@ -712,8 +839,19 @@
 
       answered = true;
 
-      if(isCorrect) correctCount++;
-      else wrongCount++;
+      if(isCorrect) {
+        correctCount++;
+      } else {
+        wrongCount++;
+
+        // 答错的题目自动加回队伍，让学生重新答过两次
+        // 如果是原题第一次答错，会加入第 1 次和第 2 次重答
+        // 如果是重答题又答错，不会无限增加，避免题目做不完
+        if(!q.retryRound){
+          quizQuestions.push({...q, retryRound:1});
+          quizQuestions.push({...q, retryRound:2});
+        }
+      }
 
       answerHistory.push({
         question:q.question,
@@ -749,8 +887,8 @@
       hide("quizCard");
       show("resultCard");
 
-      const total = quizQuestions.length;
-      const percent = Math.round((correctCount / total) * 100);
+      const total = correctCount + wrongCount;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
 
       document.getElementById("resultSummary").innerHTML = `
         <p><span class="pill">${selectedSubject} ${selectedForm}</span>
@@ -775,10 +913,10 @@
         subject:selectedSubject,
         form:selectedForm,
         chapter:selectedChapter,
-        total:quizQuestions.length,
+        total:correctCount + wrongCount,
         correct:correctCount,
         wrong:wrongCount,
-        percent:Math.round((correctCount / quizQuestions.length) * 100),
+        percent:(correctCount + wrongCount) > 0 ? Math.round((correctCount / (correctCount + wrongCount)) * 100) : 0,
         dateTime:new Date().toLocaleString("en-MY", { timeZone:"Asia/Kuala_Lumpur" }),
         answers:answerHistory
       };
