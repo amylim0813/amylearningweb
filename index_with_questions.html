@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ms Amy 棒棒学习网 V1</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --primary:#2563eb;
+      --primary-dark:#1d4ed8;
+      --success:#16a34a;
+      --danger:#dc2626;
+      --warning:#f59e0b;
+      --border:#e5e7eb;
+      --shadow:0 12px 30px rgba(15,23,42,.08);
+    }
+    body.dark{
+      --bg:#111827;
+      --card:#1f2937;
+      --text:#f9fafb;
+      --muted:#d1d5db;
+      --primary:#60a5fa;
+      --primary-dark:#3b82f6;
+      --success:#22c55e;
+      --danger:#f87171;
+      --warning:#fbbf24;
+      --border:#374151;
+      --shadow:0 12px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+    }
+    header{
+      padding:22px 16px;
+      text-align:center;
+      background:linear-gradient(135deg, var(--primary), #7c3aed);
+      color:#fff;
+    }
+    header h1{margin:0;font-size:28px;letter-spacing:.5px}
+    header p{margin:8px 0 0;opacity:.95;font-size:15px}
+    .top-actions{display:flex;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .container{width:min(980px, 94%);margin:24px auto 60px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-bottom:18px;
+    }
+    .hidden{display:none!important}
+    h2,h3{margin-top:0}
+    label{font-weight:700;display:block;margin:14px 0 6px}
+    input,select,button{font-family:inherit;font-size:16px}
+    input,select{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:var(--card);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+    button{
+      border:0;
+      border-radius:12px;
+      padding:12px 16px;
+      font-weight:700;
+      cursor:pointer;
+      background:var(--primary);
+      color:#fff;
+      transition:.15s ease;
+    }
+    button:hover{background:var(--primary-dark)}
+    button.secondary{background:transparent;color:var(--primary);border:1px solid var(--primary)}
+    button.secondary:hover{background:rgba(37,99,235,.08)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:720px){.row{grid-template-columns:1fr} header h1{font-size:22px}}
+    .status{
+      padding:12px 14px;
+      border-radius:12px;
+      margin-top:12px;
+      background:rgba(37,99,235,.1);
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+    .small{font-size:14px;color:var(--muted)}
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(37,99,235,.1);
+      color:var(--primary);
+      font-weight:700;
+      font-size:13px;
+      margin:4px 4px 4px 0;
+    }
+    .question-box{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      margin-top:14px;
+      background:rgba(148,163,184,.08);
+    }
+    .question-title{font-size:18px;font-weight:800;line-height:1.45;margin-bottom:12px;white-space:pre-wrap}
+    .question-image{
+      max-width:100%;
+      max-height:360px;
+      display:block;
+      margin:12px auto 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+    .option{
+      display:block;
+      padding:12px 14px;
+      margin:10px 0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      cursor:pointer;
+      background:var(--card);
+      line-height:1.45;
+      word-break:break-word;
+    }
+    .option:hover{border-color:var(--primary)}
+    .option input{width:auto;margin-right:8px}
+    .feedback{padding:13px 14px;border-radius:12px;margin-top:12px;line-height:1.5;border:1px solid var(--border)}
+    .feedback.correct{background:rgba(22,163,74,.12);border-color:rgba(22,163,74,.3)}
+    .feedback.wrong{background:rgba(220,38,38,.12);border-color:rgba(220,38,38,.3)}
+    .progress{height:12px;width:100%;border-radius:999px;background:rgba(148,163,184,.25);overflow:hidden;margin:10px 0 18px}
+    .bar{height:100%;width:0%;background:linear-gradient(90deg, var(--primary), #7c3aed);transition:.25s}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    table{width:100%;border-collapse:collapse;margin-top:12px;overflow:hidden;border-radius:12px}
+    th,td{border-bottom:1px solid var(--border);padding:10px;text-align:left;font-size:14px}
+    th{color:var(--muted)}
+    .footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+    .retry-note{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(245,158,11,.15);
+      color:var(--warning);
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ms Amy 棒棒学习网</h1>
+    <p>Sejarah · English · Geografi | V1 稳定练习版</p>
+    <div class="top-actions">
+      <button class="secondary" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+      <button class="secondary" onclick="goHome()">🏠 回首页</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="loginCard" class="card">
+      <h2>学生登入</h2>
+      <p class="small">学生输入姓名后就可以开始练习。V1 暂时不设置密码，之后可以加每月密码。</p>
+      <label for="studentName">学生姓名</label>
+      <input id="studentName" placeholder="例如：Tan Mei Mei" />
+      <div class="actions">
+        <button onclick="login()">登入</button>
+      </div>
+      <div id="loginMsg" class="status hidden"></div>
+    </section>
+
+    <section id="selectCard" class="card hidden">
+      <h2>选择练习</h2>
+      <p>学生：<strong id="showStudentName"></strong></p>
+      <div class="row">
+        <div>
+          <label for="subjectSelect">科目</label>
+          <select id="subjectSelect" onchange="onSubjectChange()">
+            <option value="">请选择科目</option>
+          </select>
+        </div>
+        <div>
+          <label for="formSelect">年级</label>
+          <select id="formSelect" onchange="onFormChange()">
+            <option value="">请选择年级</option>
+          </select>
+        </div>
+      </div>
+      <label for="chapterSelect">章节 / Chapter</label>
+      <select id="chapterSelect">
+        <option value="">请选择章节</option>
+      </select>
+      <div class="actions">
+        <button onclick="startQuiz()">开始练习</button>
+        <button class="secondary" onclick="logout()">换学生</button>
+      </div>
+      <div id="selectMsg" class="status hidden"></div>
+    </section>
+
+    <section id="quizCard" class="card hidden">
+      <div>
+        <span class="pill" id="quizInfo"></span>
+        <span class="pill" id="questionCount"></span>
+      </div>
+      <div class="progress"><div class="bar" id="progressBar"></div></div>
+      <div id="questionArea" class="question-box"></div>
+      <div class="actions">
+        <button id="checkBtn" onclick="checkAnswer()">检查答案</button>
+        <button id="nextBtn" onclick="nextQuestion()" class="hidden">下一题</button>
+        <button class="secondary" onclick="backToSelect()">返回选择练习</button>
+      </div>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <h2>完成练习</h2>
+      <div id="resultSummary"></div>
+      <div class="actions">
+        <button onclick="submitScore()">提交成绩</button>
+        <button class="secondary" onclick="backToSelect()">继续做其他练习</button>
+      </div>
+      <div id="submitMsg" class="status hidden"></div>
+    </section>
+
+    <section class="card">
+      <h3>老师说明</h3>
+      <p class="small">
+        这是 V1 稳定版。CSV 支持 image 图片栏位。学生答错的题目会自动重新答过两次。
+      </p>
+    </section>
+
+    <div class="footer-note">© Ms Amy 棒棒学习网 · V1</div>
+  </main>
+
+  <script>
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbziBzYZ-IcnXPnVV06LlF7a31HFiwcl_RHVoherRd7NfKZyptvhmjXERDCX6OULz5VA/exec";
+
+    const COURSE_MAP = {
+      "Sejarah": ["F1", "F2", "F3", "F4", "F5"],
+      "English": ["F2", "F4", "F5"],
+      "Geografi": ["F1", "F2", "F3"]
+    };
+
+    const QUESTION_BANK = [
+      {
+            "subject": "Sejarah",
+            "form": "F1",
+            "chapter": "Bab 1: Mengenali Sejarah",
+            "type": "radio",
+            "question": "Apakah maksud sejarah?",
+            "image": "",
+            "options": [
+                  "Peristiwa yang telah berlaku pada masa lalu",
+                  "Cerita rekaan untuk hiburan",
+                  "Ramalan masa depan",
+                  "Kajian tentang tumbuhan"
+            ],
+            "answer": [
+                  "Peristiwa yang telah berlaku pada masa lalu"
+            ],
+            "explain": "Sejarah ialah peristiwa yang benar-benar berlaku pada masa lalu."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F1",
+            "chapter": "Bab 1: Mengenali Sejarah",
+            "type": "radio",
+            "question": "Apakah contoh sumber primer?",
+            "image": "",
+            "options": [
+                  "Buku teks",
+                  "Majalah",
+                  "Fosil",
+                  "Cerita lisan yang tidak disemak"
+            ],
+            "answer": [
+                  "Fosil"
+            ],
+            "explain": "Sumber primer ialah sumber asal seperti fosil manuskrip batu bersurat dan artifak."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F2",
+            "chapter": "Bab 1: Kerajaan Alam Melayu",
+            "type": "radio",
+            "question": "Kerajaan Alam Melayu terkenal dengan aktiviti apa?",
+            "image": "",
+            "options": [
+                  "Perdagangan",
+                  "Perlombongan moden",
+                  "Pembuatan kapal terbang",
+                  "Industri komputer"
+            ],
+            "answer": [
+                  "Perdagangan"
+            ],
+            "explain": "Kerajaan Alam Melayu berkembang melalui perdagangan dan hubungan luar."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F3",
+            "chapter": "Bab 1: Kedatangan Kuasa Barat",
+            "type": "radio",
+            "question": "Apakah faktor utama kedatangan kuasa Barat ke negara kita?",
+            "image": "",
+            "options": [
+                  "Mencari bahan mentah",
+                  "Melawat tempat menarik",
+                  "Membantu rakyat tempatan",
+                  "Membina sekolah sahaja"
+            ],
+            "answer": [
+                  "Mencari bahan mentah"
+            ],
+            "explain": "Kuasa Barat datang untuk mendapatkan bahan mentah seperti bijih timah dan rempah-ratus."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F4",
+            "chapter": "Bab 1: Warisan Negara Bangsa",
+            "type": "radio",
+            "question": "Apakah maksud kedaulatan?",
+            "image": "",
+            "options": [
+                  "Kuasa tertinggi sesebuah negara",
+                  "Sistem jual beli",
+                  "Hubungan keluarga diraja",
+                  "Kawasan tanaman padi"
+            ],
+            "answer": [
+                  "Kuasa tertinggi sesebuah negara"
+            ],
+            "explain": "Kedaulatan bermaksud kuasa tertinggi yang dimiliki oleh sesebuah negara untuk memerintah."
+      },
+      {
+            "subject": "Sejarah",
+            "form": "F5",
+            "chapter": "Bab 1: Kedaulatan Negara",
+            "type": "radio",
+            "question": "Mengapakah kedaulatan penting kepada sesebuah negara?",
+            "image": "",
+            "options": [
+                  "Menjamin keamanan dan kestabilan",
+                  "Menghapuskan semua undang-undang",
+                  "Mengurangkan semangat patriotik",
+                  "Mengelakkan pilihan raya"
+            ],
+            "answer": [
+                  "Menjamin keamanan dan kestabilan"
+            ],
+            "explain": "Kedaulatan penting untuk mengekalkan keamanan kestabilan politik dan maruah negara."
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "What does reasonable mean?",
+            "image": "",
+            "options": [
+                  "Very expensive",
+                  "Cheap and fair",
+                  "Too old",
+                  "Very small"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": "___________"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "The word appreciate in the email means ________.",
+            "image": "",
+            "options": [
+                  "throw away",
+                  "dislike",
+                  "value and be thankful for",
+                  "forget"
+            ],
+            "answer": [
+                  "C"
+            ],
+            "explain": "_____"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "What does effort mean?",
+            "image": "",
+            "options": [
+                  "Hard work",
+                  "Money",
+                  "Time",
+                  "Luck"
+            ],
+            "answer": [
+                  "A"
+            ],
+            "explain": "____"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "The word compare means ________.",
+            "image": "",
+            "options": [
+                  "buy something",
+                  "look at the differences between things",
+                  "return something",
+                  "make something"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": "__"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "I think buying the bracelet from an online store ________ a good idea.",
+            "image": "",
+            "options": [
+                  "are",
+                  "were",
+                  "is",
+                  "be"
+            ],
+            "answer": [
+                  "C"
+            ],
+            "explain": "______________"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "There are many beautiful choices ________ reasonable prices.",
+            "image": "",
+            "options": [
+                  "on",
+                  "at",
+                  "with",
+                  "in"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": "____ eg at a price/ at reasonable price"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "You can compare prices ________ read customers' reviews.",
+            "image": "",
+            "options": [
+                  "but",
+                  "or",
+                  "and",
+                  "because"
+            ],
+            "answer": [
+                  "C"
+            ],
+            "explain": "compare prices _ read reviews __________ and"
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "I'm sure your sister ________ your love and effort.",
+            "image": "",
+            "options": [
+                  "appreciates",
+                  "appreciated",
+                  "will appreciate",
+                  "appreciating"
+            ],
+            "answer": [
+                  "C"
+            ],
+            "explain": "I'm sure...____________________will appreciate__\"__________\""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Nowadays, cyberbullying has become a ________ problem among teenagers.",
+            "image": "",
+            "options": [
+                  "funny",
+                  "serious",
+                  "boring",
+                  "simple"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Nowadays, cyberbullying has become a serious problem ________ teenagers.",
+            "image": "",
+            "options": [
+                  "between",
+                  "among",
+                  "during",
+                  "over"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Words can ________ more than we think, so we should always use the Internet wisely.",
+            "image": "",
+            "options": [
+                  "clean",
+                  "hurt",
+                  "build",
+                  "save"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Words can hurt more than we think, so we should always use the Internet ________.",
+            "image": "",
+            "options": [
+                  "quickly",
+                  "loudly",
+                  "wisely",
+                  "carelessly"
+            ],
+            "answer": [
+                  "C"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Together, we can ________ a safer and kinder online environment for everyone.",
+            "image": "",
+            "options": [
+                  "create",
+                  "destroy",
+                  "forget",
+                  "lose"
+            ],
+            "answer": [
+                  "A"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Together, we can create a safer and ________ online environment for everyone.",
+            "image": "",
+            "options": [
+                  "noisier",
+                  "kinder",
+                  "dirtier",
+                  "weaker"
+            ],
+            "answer": [
+                  "B"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F2",
+            "chapter": "vocab email",
+            "type": "radio",
+            "question": "Together, we can create a safer and kinder online ________ for everyone.",
+            "image": "",
+            "options": [
+                  "lesson",
+                  "classroom",
+                  "competition",
+                  "environment"
+            ],
+            "answer": [
+                  "D"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "English",
+            "form": "F5",
+            "chapter": "Reading: Vocabulary",
+            "type": "radio",
+            "question": "Choose the word with the closest meaning to assist.",
+            "image": "",
+            "options": [
+                  "help",
+                  "avoid",
+                  "delay",
+                  "refuse"
+            ],
+            "answer": [
+                  "help"
+            ],
+            "explain": ""
+      },
+      {
+            "subject": "Geografi",
+            "form": "F1",
+            "chapter": "Bab 1: Arah",
+            "type": "radio",
+            "question": "Apakah arah yang bertentangan dengan utara?",
+            "image": "",
+            "options": [
+                  "Timur",
+                  "Selatan",
+                  "Barat",
+                  "Timur Laut"
+            ],
+            "answer": [
+                  "Selatan"
+            ],
+            "explain": "Arah yang bertentangan dengan utara ialah selatan."
+      },
+      {
+            "subject": "Geografi",
+            "form": "F1",
+            "chapter": "Bab 1: Arah",
+            "type": "radio",
+            "question": "Lihat gambar kompas di bawah. Arah manakah yang biasanya berada di bahagian atas kompas?",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Compass_Rose_English_North.svg/512px-Compass_Rose_English_North.svg.png",
+            "options": [
+                  "Utara",
+                  "Selatan",
+                  "Timur",
+                  "Barat"
+            ],
+            "answer": [
+                  "Utara"
+            ],
+            "explain": "Bahagian atas kompas biasanya menunjukkan arah utara."
+      },
+      {
+            "subject": "Geografi",
+            "form": "F2",
+            "chapter": "Bab 2: Peta Topografi",
+            "type": "radio",
+            "question": "Garisan kontur digunakan untuk menunjukkan apa?",
+            "image": "",
+            "options": [
+                  "Ketinggian sesuatu kawasan",
+                  "Jumlah penduduk",
+                  "Jenis tanaman",
+                  "Sempadan negeri"
+            ],
+            "answer": [
+                  "Ketinggian sesuatu kawasan"
+            ],
+            "explain": "Garisan kontur menunjukkan ketinggian dan bentuk muka bumi."
+      },
+      {
+            "subject": "Geografi",
+            "form": "F3",
+            "chapter": "Bab 1: Jadual dan Graf",
+            "type": "radio",
+            "question": "Apakah kegunaan graf bar?",
+            "image": "",
+            "options": [
+                  "Membandingkan data antara kategori",
+                  "Menunjukkan arah mata angin",
+                  "Menentukan skala peta",
+                  "Mengukur kelembapan udara"
+            ],
+            "answer": [
+                  "Membandingkan data antara kategori"
+            ],
+            "explain": "Graf bar sesuai digunakan untuk membandingkan jumlah data bagi beberapa kategori."
+      }
+];
+
+    let studentName = "";
+    let selectedSubject = "";
+    let selectedForm = "";
+    let selectedChapter = "";
+    let quizQuestions = [];
+    let currentIndex = 0;
+    let correctCount = 0;
+    let wrongCount = 0;
+    let answered = false;
+    let answerHistory = [];
+
+    function init(){
+      const subjectSelect = document.getElementById("subjectSelect");
+      Object.keys(COURSE_MAP).forEach(function(subject){
+        const opt = document.createElement("option");
+        opt.value = subject;
+        opt.textContent = subject;
+        subjectSelect.appendChild(opt);
+      });
+    }
+
+    function toggleDarkMode(){
+      document.body.classList.toggle("dark");
+      localStorage.setItem("amy_quiz_dark", document.body.classList.contains("dark") ? "1" : "0");
+    }
+
+    function loadTheme(){
+      if(localStorage.getItem("amy_quiz_dark") === "1"){
+        document.body.classList.add("dark");
+      }
+    }
+
+    function show(id){document.getElementById(id).classList.remove("hidden");}
+    function hide(id){document.getElementById(id).classList.add("hidden");}
+
+    function showMsg(id, msg){
+      const el = document.getElementById(id);
+      el.textContent = msg;
+      el.classList.remove("hidden");
+    }
+
+    function login(){
+      const name = document.getElementById("studentName").value.trim();
+      if(!name){
+        showMsg("loginMsg","请先输入学生姓名。");
+        return;
+      }
+      studentName = name;
+      localStorage.setItem("amy_quiz_student", studentName);
+      document.getElementById("showStudentName").textContent = studentName;
+      hide("loginCard");
+      show("selectCard");
+    }
+
+    function logout(){
+      studentName = "";
+      localStorage.removeItem("amy_quiz_student");
+      document.getElementById("studentName").value = "";
+      hide("selectCard");
+      hide("quizCard");
+      hide("resultCard");
+      show("loginCard");
+    }
+
+    function goHome(){
+      if(studentName){
+        hide("quizCard");
+        hide("resultCard");
+        show("selectCard");
+      }else{
+        hide("selectCard");
+        hide("quizCard");
+        hide("resultCard");
+        show("loginCard");
+      }
+    }
+
+    function onSubjectChange(){
+      selectedSubject = document.getElementById("subjectSelect").value;
+      const formSelect = document.getElementById("formSelect");
+      formSelect.innerHTML = '<option value="">请选择年级</option>';
+      document.getElementById("chapterSelect").innerHTML = '<option value="">请选择章节</option>';
+      document.getElementById("selectMsg").classList.add("hidden");
+
+      if(!selectedSubject) return;
+
+      COURSE_MAP[selectedSubject].forEach(function(form){
+        const opt = document.createElement("option");
+        opt.value = form;
+        opt.textContent = form;
+        formSelect.appendChild(opt);
+      });
+    }
+
+    function onFormChange(){
+      selectedSubject = document.getElementById("subjectSelect").value;
+      selectedForm = document.getElementById("formSelect").value;
+      const chapterSelect = document.getElementById("chapterSelect");
+      chapterSelect.innerHTML = '<option value="">请选择章节</option>';
+      document.getElementById("selectMsg").classList.add("hidden");
+
+      if(!selectedSubject || !selectedForm) return;
+
+      const chapters = [];
+      QUESTION_BANK.forEach(function(q){
+        if(q.subject === selectedSubject && q.form === selectedForm && !chapters.includes(q.chapter)){
+          chapters.push(q.chapter);
+        }
+      });
+
+      if(chapters.length === 0){
+        showMsg("selectMsg","这个科目和年级暂时还没有题目。");
+        return;
+      }
+
+      chapters.forEach(function(ch){
+        const opt = document.createElement("option");
+        opt.value = ch;
+        opt.textContent = ch;
+        chapterSelect.appendChild(opt);
+      });
+    }
+
+    function startQuiz(){
+      selectedSubject = document.getElementById("subjectSelect").value;
+      selectedForm = document.getElementById("formSelect").value;
+      selectedChapter = document.getElementById("chapterSelect").value;
+
+      if(!selectedSubject || !selectedForm || !selectedChapter){
+        showMsg("selectMsg","请选择科目、年级和章节。");
+        return;
+      }
+
+      quizQuestions = QUESTION_BANK
+        .filter(function(q){
+          return q.subject === selectedSubject &&
+                 q.form === selectedForm &&
+                 q.chapter === selectedChapter;
+        })
+        .map(function(q){ return Object.assign({}, q); });
+
+      if(quizQuestions.length === 0){
+        showMsg("selectMsg","这个章节暂时没有题目。");
+        return;
+      }
+
+      currentIndex = 0;
+      correctCount = 0;
+      wrongCount = 0;
+      answerHistory = [];
+      answered = false;
+
+      hide("selectCard");
+      hide("resultCard");
+      show("quizCard");
+      renderQuestion();
+    }
+
+    function renderQuestion(){
+      answered = false;
+      const q = quizQuestions[currentIndex];
+      document.getElementById("quizInfo").textContent = q.subject + " " + q.form + " · " + q.chapter;
+      document.getElementById("questionCount").textContent = "第 " + (currentIndex + 1) + " / " + quizQuestions.length + " 题";
+      document.getElementById("progressBar").style.width = ((currentIndex / quizQuestions.length) * 100) + "%";
+
+      let html = "";
+      if(q.retryRound){
+        html += '<div class="retry-note">重答题目：第 ' + q.retryRound + ' 次</div>';
+      }
+      html += '<div class="question-title">' + escapeHtml(q.question) + '</div>';
+
+      if(q.image){
+        html += '<img class="question-image" src="' + escapeHtml(q.image) + '" alt="question image" onerror="this.style.display=\'none\'">';
+      }
+
+      if(q.type === "radio"){
+        q.options.forEach(function(opt){
+          html += '<label class="option"><input type="radio" name="answer" value="' + escapeHtml(opt) + '"> ' + escapeHtml(opt) + '</label>';
+        });
+      }else if(q.type === "checkbox"){
+        q.options.forEach(function(opt){
+          html += '<label class="option"><input type="checkbox" name="answer" value="' + escapeHtml(opt) + '"> ' + escapeHtml(opt) + '</label>';
+        });
+      }else if(q.type === "text"){
+        html += '<input id="textAnswer" placeholder="请输入答案">';
+      }
+
+      html += '<div id="feedbackArea"></div>';
+      document.getElementById("questionArea").innerHTML = html;
+      document.getElementById("checkBtn").classList.remove("hidden");
+      document.getElementById("nextBtn").classList.add("hidden");
+    }
+
+    function getStudentAnswer(q){
+      if(q.type === "radio"){
+        const checked = document.querySelector('input[name="answer"]:checked');
+        return checked ? [checked.value] : [];
+      }
+
+      if(q.type === "checkbox"){
+        return Array.prototype.slice.call(document.querySelectorAll('input[name="answer"]:checked')).map(function(x){return x.value;});
+      }
+
+      if(q.type === "text"){
+        const ans = document.getElementById("textAnswer").value.trim();
+        return ans ? [ans] : [];
+      }
+
+      return [];
+    }
+
+    function checkAnswer(){
+      if(answered) return;
+
+      const q = quizQuestions[currentIndex];
+      const studentAns = getStudentAnswer(q);
+
+      if(studentAns.length === 0){
+        alert("请先选择或输入答案。");
+        return;
+      }
+
+      const correctAns = q.answer.map(function(x){return normalize(x);});
+      const givenAns = studentAns.map(function(x){return normalize(x);});
+
+      let isCorrect = false;
+
+      if(q.type === "checkbox"){
+        isCorrect = correctAns.length === givenAns.length && correctAns.every(function(ans){return givenAns.includes(ans);});
+      }else{
+        isCorrect = correctAns.includes(givenAns[0]);
+      }
+
+      answered = true;
+
+      if(isCorrect){
+        correctCount++;
+      }else{
+        wrongCount++;
+
+        // 答错的题目自动加回队伍，让学生重新答过两次
+        // 重答题再次答错不会无限增加
+        if(!q.retryRound){
+          const retry1 = Object.assign({}, q, {retryRound:1});
+          const retry2 = Object.assign({}, q, {retryRound:2});
+          quizQuestions.push(retry1);
+          quizQuestions.push(retry2);
+        }
+      }
+
+      answerHistory.push({
+        question:q.question,
+        studentAnswer:studentAns.join(", "),
+        correctAnswer:q.answer.join(", "),
+        isCorrect:isCorrect,
+        explain:q.explain || ""
+      });
+
+      const feedback = document.getElementById("feedbackArea");
+      feedback.className = "feedback " + (isCorrect ? "correct" : "wrong");
+      feedback.innerHTML =
+        "<strong>" + (isCorrect ? "✅ 答对了！" : "❌ 答错了") + "</strong><br>" +
+        "<strong>正确答案：</strong>" + escapeHtml(q.answer.join(", ")) + "<br>" +
+        "<strong>解释：</strong>" + escapeHtml(q.explain || "暂无解释");
+
+      document.getElementById("checkBtn").classList.add("hidden");
+      document.getElementById("nextBtn").classList.remove("hidden");
+      document.getElementById("questionCount").textContent = "第 " + (currentIndex + 1) + " / " + quizQuestions.length + " 题";
+    }
+
+    function nextQuestion(){
+      if(currentIndex < quizQuestions.length - 1){
+        currentIndex++;
+        renderQuestion();
+      }else{
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz(){
+      document.getElementById("progressBar").style.width = "100%";
+      hide("quizCard");
+      show("resultCard");
+
+      const total = correctCount + wrongCount;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      document.getElementById("resultSummary").innerHTML =
+        '<p><span class="pill">' + escapeHtml(selectedSubject + " " + selectedForm) + '</span>' +
+        '<span class="pill">' + escapeHtml(selectedChapter) + '</span></p>' +
+        '<table>' +
+        '<tr><th>学生</th><td>' + escapeHtml(studentName) + '</td></tr>' +
+        '<tr><th>总作答次数</th><td>' + total + '</td></tr>' +
+        '<tr><th>答对</th><td>' + correctCount + '</td></tr>' +
+        '<tr><th>答错</th><td>' + wrongCount + '</td></tr>' +
+        '<tr><th>正确率</th><td>' + percent + '%</td></tr>' +
+        '</table>';
+    }
+
+    async function submitScore(){
+      const msg = document.getElementById("submitMsg");
+      const total = correctCount + wrongCount;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      const payload = {
+        action:"submitScore",
+        studentName:studentName,
+        subject:selectedSubject,
+        form:selectedForm,
+        chapter:selectedChapter,
+        total:total,
+        correct:correctCount,
+        wrong:wrongCount,
+        percent:percent,
+        dateTime:new Date().toLocaleString("en-MY", { timeZone:"Asia/Kuala_Lumpur" }),
+        answers:answerHistory
+      };
+
+      msg.classList.remove("hidden");
+      msg.textContent = "正在提交成绩...";
+
+      try{
+        await fetch(WEB_APP_URL, {
+          method:"POST",
+          mode:"no-cors",
+          headers:{"Content-Type":"text/plain;charset=utf-8"},
+          body:JSON.stringify(payload)
+        });
+        saveLocalScore(payload);
+        msg.textContent = "✅ 成绩已提交。如果 Google Sheet 没马上看到，请等几秒再刷新。";
+      }catch(err){
+        saveLocalScore(payload);
+        msg.textContent = "⚠️ 网络提交失败，但成绩已暂存在这个设备。请检查 Apps Script URL。";
+      }
+    }
+
+    function saveLocalScore(payload){
+      const oldScores = JSON.parse(localStorage.getItem("amy_quiz_scores") || "[]");
+      oldScores.push(payload);
+      localStorage.setItem("amy_quiz_scores", JSON.stringify(oldScores));
+    }
+
+    function backToSelect(){
+      hide("quizCard");
+      hide("resultCard");
+      show("selectCard");
+    }
+
+    function normalize(str){
+      return String(str || "").trim().toLowerCase();
+    }
+
+    function escapeHtml(str){
+      return String(str || "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    loadTheme();
+    init();
+
+    const savedStudent = localStorage.getItem("amy_quiz_student");
+    if(savedStudent){
+      studentName = savedStudent;
+      document.getElementById("showStudentName").textContent = studentName;
+      hide("loginCard");
+      show("selectCard");
+    }
+  </script>
+</body>
+</html>
